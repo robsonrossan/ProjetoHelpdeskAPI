@@ -15,20 +15,6 @@ public class HelpDeskApplication {
 	
 	
 	/**
-	 * 1° Gerar Token
-	 * http://localhost:8080/api/auth  
-	 * 
-	 * NECESSARIO PASSAR ISSO VIA POSTMAN
-	 * {
-			"email" : "admin@helpdesk.com",
-			"password" : "123456"
-		}
-	 * 
-	 */
-	
-	
-	
-	/**
 	 * 
 	 * Seção 9: Projeto Prático (Backend) COMEÇAR aula 46
 	 * @param args

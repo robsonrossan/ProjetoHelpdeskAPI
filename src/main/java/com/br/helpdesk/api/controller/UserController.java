@@ -34,7 +34,7 @@ public class UserController {
 	private PasswordEncoder passwordEncoder;
 	
 	@PostMapping
-	@PreAuthorize("hasAnyRole('ADMIN')") // #################################### COM ESTA ANOTAÇÃO: somente ADMINISTRADOR PODE ALTERAR UM USSUÁRIO
+	@PreAuthorize("hasAnyRole('ADMIN')") // #################################### COM ESTA ANOTAÇÃO: somente ADMINISTRADOR PODE ALTERAR UM USUÁRIO
 	public ResponseEntity<Response<User>> create(HttpServletRequest request, @RequestBody User user, 
 			BindingResult result){
 		Response<User> response = new Response<User>();

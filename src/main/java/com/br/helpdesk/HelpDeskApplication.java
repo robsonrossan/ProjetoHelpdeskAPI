@@ -28,8 +28,6 @@ public class HelpDeskApplication {
 	
 	
 	/**
-	 * PERGUNTA FEITA SOBRE O ERRO  AO FAZER START NA APLICAÇÃO (Run application Spring Boot)
-	 * 
 	 * 
 	 * Seção 9: Projeto Prático (Backend) COMEÇAR aula 46
 	 * @param args

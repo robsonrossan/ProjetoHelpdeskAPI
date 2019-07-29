@@ -1,0 +1,12 @@
+C:\projetos_java_estudo\HelpDesk\src\main\java\com\br\helpdesk\HelpDeskApplication.java
+C:\projetos_java_estudo\HelpDesk\src\main\java\com\br\helpdesk\api\enuns\PriorityEnum.java
+C:\projetos_java_estudo\HelpDesk\src\main\java\com\br\helpdesk\api\enuns\StatusEnum.java
+C:\projetos_java_estudo\HelpDesk\src\main\java\com\br\helpdesk\api\service\impl\UserServiceImpl.java
+C:\projetos_java_estudo\HelpDesk\src\main\java\com\br\helpdesk\api\entity\ChangeStatus.java
+C:\projetos_java_estudo\HelpDesk\src\main\java\com\br\helpdesk\api\enuns\ProfileEnum.java
+C:\projetos_java_estudo\HelpDesk\src\main\java\com\br\helpdesk\api\repository\ChangeStatusRepository.java
+C:\projetos_java_estudo\HelpDesk\src\main\java\com\br\helpdesk\api\entity\Ticket.java
+C:\projetos_java_estudo\HelpDesk\src\main\java\com\br\helpdesk\api\entity\User.java
+C:\projetos_java_estudo\HelpDesk\src\main\java\com\br\helpdesk\api\service\UserService.java
+C:\projetos_java_estudo\HelpDesk\src\main\java\com\br\helpdesk\api\repository\TicketRepository.java
+C:\projetos_java_estudo\HelpDesk\src\main\java\com\br\helpdesk\api\repository\UserRepository.java

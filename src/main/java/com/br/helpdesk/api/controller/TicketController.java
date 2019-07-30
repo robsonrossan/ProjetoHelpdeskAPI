@@ -9,6 +9,7 @@ import java.util.Random;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
@@ -27,6 +28,7 @@ import com.br.helpdesk.api.api.security.jwt.JwtTokenUtil;
 import com.br.helpdesk.api.entity.ChangeStatus;
 import com.br.helpdesk.api.entity.Ticket;
 import com.br.helpdesk.api.entity.User;
+import com.br.helpdesk.api.enuns.ProfileEnum;
 import com.br.helpdesk.api.enuns.StatusEnum;
 import com.br.helpdesk.api.response.Response;
 import com.br.helpdesk.api.service.TicketService;
@@ -171,4 +173,48 @@ public class TicketController {
 		return ResponseEntity.ok(new Response<String>());
 	}
 	
+	@GetMapping(value = "{page}/{count}")
+	@PreAuthorize("hasAnyRole('CUSTOMER', 'TECHNICIAN')")
+	public ResponseEntity<Response<Page<Ticket>>>findAll(HttpServletRequest request,  @PathVariable("page") int page, @PathVariable("count") int count){
+		Response<Page<Ticket>> response = new Response<Page<Ticket>>();
+		Page<Ticket> tickets = null;
+		User userRequest = userFromRequest(request);
+		
+		if(userRequest.getProfile().equals(ProfileEnum.ROLE_TECHNICIAN)) {
+			tickets = ticketService.listTicket(page, count);
+		}else if(userRequest.getProfile().equals(ProfileEnum.ROLE_CUSTOMER)) {
+			tickets = ticketService.findByCurrentUser(page, count, userRequest.getId());
+		}
+		response.setData(tickets);
+		return ResponseEntity.ok(response);
+	}
+	
+	@GetMapping(value = "{page}/{count}/{number}/{title/{status}/{priority}/{assigned}}")
+	@PreAuthorize("hasAnyRole('CUSTOMER', 'TECHNICIAN')")
+	public ResponseEntity<Response<Page<Ticket>>>findByParams(HttpServletRequest request,  
+												@PathVariable("page") int page, 
+												@PathVariable("count") int count, 
+												@PathVariable("count") Integer number, 
+												@PathVariable("count") String title, 
+												@PathVariable("count") String status, 
+												@PathVariable("count") String priority, 
+												@PathVariable("count") boolean assigned){
+		
+		/**
+		 * if ternario para caso "title", "status", e "priority" SE VIR COM O TEXTO "uninformed" SETO NULL 
+		 */
+		title = title.equals("uninformed") ? "" : title;
+		status = status.equals("uninformed") ? "" : status;
+		priority = priority.equals("uninformed") ? "" : priority;
+		
+		Response<Page<Ticket>> response = new Response<Page<Ticket>>();
+		
+		Page<Ticket> tickets = null;
+		
+		if(number > 0) {
+			
+		}
+		
+		return null;
+	}
 }

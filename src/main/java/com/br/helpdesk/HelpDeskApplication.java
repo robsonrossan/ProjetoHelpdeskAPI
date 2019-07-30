@@ -15,6 +15,10 @@ public class HelpDeskApplication {
 	
 	
 	/**
+	 * Continuar aula 49 15:00 minutos
+	 * 
+	 * 
+	 * 
 	 * TODAS AS CHAMADAS E VIA POSTAMAN  
 	 * 
 	 * URL Gerar Token: "http://localhost:8080/api/auth" + Token no HEADER

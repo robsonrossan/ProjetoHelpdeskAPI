@@ -13,6 +13,8 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
 import com.br.helpdesk.api.api.security.jwt.JwtAuthenticationEntryPoint;
 import com.br.helpdesk.api.api.security.jwt.JwtAuthenticationTokenFilter;
 
@@ -59,20 +61,25 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	 * Metodo que configura o acesso "dar permissão conforma a extensão"
 	 */
 	@Override
-	protected void configure(HttpSecurity httpSecurity)throws Exception {
-		httpSecurity.csrf().disable()
-		.exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
-		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-		.authorizeRequests()
-		.antMatchers(
-					HttpMethod.GET,
-					"/",
-					"/*.html",
-					"/favicon.ico",
-					"/**/*.html",
-					"/**/*.css",
-					"/**/*.js").permitAll()
-		.antMatchers("/api/auth/**").permitAll();
-	}
-
+    protected void configure(HttpSecurity httpSecurity) throws Exception {
+        httpSecurity.csrf().disable()
+                .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+                .authorizeRequests()
+                .antMatchers(
+                        HttpMethod.GET,
+                        "/",
+                        "/*.html",
+                        "/favicon.ico",
+                        "/**/*.html",
+                        "/**/*.css",
+                        "/**/*.js"
+                ).permitAll()
+                .antMatchers("/api/auth/**").permitAll()
+                .anyRequest().authenticated();
+        httpSecurity.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
+        httpSecurity.headers().cacheControl();
+    }
+	
+	
 }

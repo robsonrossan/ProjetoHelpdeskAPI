@@ -7,17 +7,18 @@ import com.br.helpdesk.api.entity.Ticket;
 
 public interface TicketRepository extends MongoRepository<Ticket, String> {
 	
-	Page<Ticket> findByUserIdOrderByDateDesc(Pageable pages, String userId);
+	Page<Ticket> findByUserIdOrderByDateDesc(Pageable pages,String userId);
 	
-	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusAndPriorityOrderByDateDesc(
-			String title, String status, String priority, Pageable page);
+	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusIgnoreCaseContainingAndPriorityIgnoreCaseContainingOrderByDateDesc(
+			String title,String status,String priority,Pageable pages);
 	
-	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusAndPriorityAndUserIdOrderByDateDesc(
-			String title, String status, String priority, Pageable page);	
+	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusIgnoreCaseContainingAndPriorityIgnoreCaseContainingAndUserIdOrderByDateDesc(
+			String title,String status,String priority,String userId,Pageable pages);
 	
-	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusAndPriorityAndAssignerUserIdOrderByDateDesc(
-			String title, String status, String priority, Pageable page);	
+	Page<Ticket> findByNumber(Integer number,Pageable pages);
 	
-	Page<Ticket> findByNumber(Integer number, Pageable pages);
-
+	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusIgnoreCaseContainingAndPriorityIgnoreCaseContainingAndAssignedUserIdOrderByDateDesc(
+			String title,String status,String priority,String assignedUserId,Pageable pages);
+	
+	
 }

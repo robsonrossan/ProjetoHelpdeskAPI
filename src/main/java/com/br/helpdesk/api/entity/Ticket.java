@@ -31,7 +31,7 @@ public class Ticket {
 	private PriorityEnum priority;
 
 	@DBRef(lazy = true)
-	private User assignerUser;
+	private User assignedUser;
 
 	private String description;
 
@@ -39,7 +39,7 @@ public class Ticket {
 
 	// esta ANOTAÇÃO e para indicar que não precisa CRIAR esta coluna no banco de dados
 	@Transient
-	private List<ChangeStatus> change;
+	private List<ChangeStatus> changes;
 
 	public String getId() {
 		return id;
@@ -97,12 +97,12 @@ public class Ticket {
 		this.priority = priority;
 	}
 
-	public User getAssignerUser() {
-		return assignerUser;
+	public User getAssignedUser() {
+		return assignedUser;
 	}
 
-	public void setAssignerUser(User assignerUser) {
-		this.assignerUser = assignerUser;
+	public void setAssignedUser(User assignedUser) {
+		this.assignedUser = assignedUser;
 	}
 
 	public String getDescription() {
@@ -121,12 +121,12 @@ public class Ticket {
 		this.image = image;
 	}
 
-	public List<ChangeStatus> getChange() {
-		return change;
+	public List<ChangeStatus> getChanges() {
+		return changes;
 	}
 
-	public void setChange(List<ChangeStatus> change) {
-		this.change = change;
+	public void setChanges(List<ChangeStatus> changes) {
+		this.changes = changes;
 	}
 
 }

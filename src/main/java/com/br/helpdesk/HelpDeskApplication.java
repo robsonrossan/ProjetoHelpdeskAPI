@@ -10,43 +10,22 @@ import com.br.helpdesk.api.entity.User;
 import com.br.helpdesk.api.enuns.ProfileEnum;
 import com.br.helpdesk.api.repository.UserRepository;
 
+/**
+ * 
+ * @author robson.rosa
+ *
+ */
 @SpringBootApplication
 public class HelpDeskApplication {
 	
 	
 	/**
-	 * Continuar aula 49 15:00 minutos
+	 * Continuar aula 51 
 	 * 
-	 * 
-	 * 
-	 * TODAS AS CHAMADAS E VIA POSTAMAN  
-	 * 
-	 * URL Gerar Token: "http://localhost:8080/api/auth" + Token no HEADER
-	 * 
-	 * URL Inserir Usuário: "http://localhost:8080/api/user" + Token no HEADER
-	 * {
-			"email" : "EMAIL@hotmail.com",
-			"password" : "123456",
-			"profile" : "ROLE_ADMIN"
-		}
-	 * 
-	 * URL Alterar Usuário: "Mesmo do inserir, com o json alterado" + Token no HEADER
-	 * {
-			"id": "5d4035b6298402322cef006e",
-			"email" : "robson@gmail.com",
-			"password" : "123456",
-			"profile" : "ROLE_ADMIN"
-		}
-	 * 
-	 * URL: Busca Por ID: "http://localhost:8080/api/user/5d3b473383e636196028d2dc" + Token no HEADER
-	 * 
-	 * URL DELETE USUARIO: http://localhost:8080/api/user/5d4038c8298402322cef0076
-	 * 
-	 * URL: BUSCA POR PAGINA E QTDE REGISTROS: "http://localhost:8080/api/user/0/10" + Token no HEADER
-	 * 
-	 * @param args
 	 */
 
+	
+	
 	public static void main(String[] args) {
 		SpringApplication.run(HelpDeskApplication.class, args);
 	}
@@ -60,6 +39,9 @@ public class HelpDeskApplication {
 	
 	/**
 	 * Ao Iniciar aplicação já será criado o usuario "admin" com ROLE ADMIN
+	 * 
+	 * @author robson.rosa
+	 * 
 	 * @param userRepository
 	 * @param passwordEncoder
 	 */

@@ -22,7 +22,7 @@ public interface TicketService {
 	
 	Page<Ticket>findByCurrentUser(int page, int count, String userId);
 	
-	Page<Ticket> findByParameter(int page, int count, String title, String status, String priority);
+	Page<Ticket> findByParameters(int page, int count, String title, String status, String priority);
 	
 	Page<Ticket> findByParametersAndCurrentUser(int page, int count, String title, String status, String priority, String userId);
 	
@@ -30,6 +30,6 @@ public interface TicketService {
 	
 	Iterable<Ticket> findAll();
 	
-	Page<Ticket>findByParameterAndAssingnedUser(int page, int count, String title, String status, String priority, String assignedUser);
-
+	public Page<Ticket>findByParametersAndAssignedUser(int page, int count, String title, String status, String priority, String assignedUser);
+	
 }

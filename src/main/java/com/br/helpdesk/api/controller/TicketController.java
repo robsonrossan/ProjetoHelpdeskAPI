@@ -225,7 +225,6 @@ public class TicketController {
 													@PathVariable("id") String id, 
 													@PathVariable("status") String status, 
 													HttpServletRequest request,  
-													@RequestBody Ticket ticket,
 													BindingResult result) {
 		
 		Response<Ticket> response = new Response<Ticket>();

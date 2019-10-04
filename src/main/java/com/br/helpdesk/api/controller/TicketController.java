@@ -225,6 +225,7 @@ public class TicketController {
 													@PathVariable("id") String id, 
 													@PathVariable("status") String status, 
 													HttpServletRequest request,  
+													@RequestBody Ticket ticket,
 													BindingResult result) {
 		
 		Response<Ticket> response = new Response<Ticket>();
@@ -253,6 +254,7 @@ public class TicketController {
 		}
 		return ResponseEntity.ok(response);
 	}
+	
 	
 	private void validateChangeStatus(String id,String status, BindingResult result) {
 		if (id == null || id.equals("")) {

@@ -124,6 +124,7 @@ public class UserController {
 	
 	@GetMapping(value = "{page}/{count}")
 	@PreAuthorize("hasAnyRole('ADMIN')") // #################################### COM ESTA ANOTAÇÃO: somente ADMINISTRADOR PODE ALTERAR UM USSUÁRIO
+	@CrossOrigin(origins = "http://localhost:4200/*", maxAge = 3600)
 	public ResponseEntity<Response<Page<User>>>findAll(@PathVariable int page, @PathVariable int count){
 		
 		Response<Page<User>> response = new Response<Page<User>>();

@@ -1,24 +1,22 @@
 package com.br.helpdesk.api.enuns;
 
-public enum StatusEnum {
-	
-	NEW,
-	ASSIGNED,
-	RESOLVED,
-	APPROVED,
-	DISAPROVED,
-	CLOSED;
-	
-	public static StatusEnum getStatus(String status) {
-		switch(status) {
-		case "New" : return NEW;
-		case "Resolved" : return  RESOLVED;
-		case "Approved" : return  APPROVED;
-		case "Disaproved" : return  DISAPROVED;
-		case "Assigned" : return  ASSIGNED;
-		case "Closed" : return  CLOSED;
-		default : return NEW;
+	public enum StatusEnum {
+		New,
+		Resolved,
+		Approved,
+		Disapproved,
+		Assigned,
+		Closed;
+		
+		public static StatusEnum getStatus(String status) {
+			switch(status) {
+				case "New" : return New;
+				case "Resolved" : return Resolved;
+				case "Approved" : return Approved;
+				case "Disapproved" : return Disapproved;
+				case "Assigned" : return Assigned;
+				case "Closed" : return Closed;
+				default : return New;
+			}
 		}
 	}
-
-}

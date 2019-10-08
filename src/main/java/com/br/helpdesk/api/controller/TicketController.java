@@ -177,6 +177,7 @@ public class TicketController {
 		User userRequest = userFromRequest(request);
 		if(userRequest.getProfile().equals(ProfileEnum.ROLE_TECHNICIAN)) {
 			tickets = ticketService.listTicket(page, count);
+			System.out.println("Retorno: " + tickets);
 		} else if(userRequest.getProfile().equals(ProfileEnum.ROLE_CUSTOMER)) {
 			tickets = ticketService.findByCurrentUser(page, count, userRequest.getId());
 		}

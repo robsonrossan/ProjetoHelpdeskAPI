@@ -108,6 +108,8 @@ OU
 								 {page}/{count}/{number}/{title}/{status}/{priority}
 http://localhost:8080/api/ticket/0/4/0/test/new/NORMAL + TOKEN
 
+http://localhost:8080/api/ticket/0/5
+
 
 
 -------------------------------------------------------- Chamada para gerar ALTERAR STATUS TICKET --------------------------- 
